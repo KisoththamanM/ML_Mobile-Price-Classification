@@ -21,12 +21,16 @@ I have performed it into four steps:
 First, the model is trained using the entire dataset without separating it into training and validation sets.  
 This helps to understand the model behaviour. But it is not reliable because when we try to predict the values, we do not have new data to cross check the results.
 
+![Trained on full dataset no splitting](Trained%20on%20full%20dataset%20no%20splitting.png)
+
 ### 2. Train/Validation Split
 
 As we need the data to check the results of the computer, we split the data into two categories:  
 
 - **Training data** – for learning the patterns  
 - **Validation data** – for testing the model on unseen data  
+
+![Trained with splitting](Trained%20with%20splitting.png)
 
 ### 3. Decision Tree with max_leaf_nodes Tuning
 
@@ -38,10 +42,14 @@ A very large number of leaf nodes can make the model overfit, and a very small n
 
 To do this, I used a loop to test different values of **max_leaf_nodes**, found the value that gave the best performance, and used it to train the final model.
 
+![loop max_leaf_nodes](loop%20max_leaf_nodes.png)
+
 ### 4. Random Forest Model
 
 A Random Forest is a machine learning method that uses **many decision trees** instead of just one. Each tree learns slightly different patterns, and when they all make a prediction, the forest combines their results to give a final answer.  
 
 Random Forest is usually **more accurate**, **more stable**, and **less likely to overfit** than a single decision tree because many trees “vote” together.
+
+![random forest](random%20forest.png)
 
 ### To compare the performance of these models, I used MAE (Mean Absolute Error) as the evaluation metric. It tells how far the model’s predictions are from the actual values on average.
